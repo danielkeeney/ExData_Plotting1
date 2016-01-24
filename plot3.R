@@ -4,13 +4,13 @@ plot3 <- function() {
   data <- setup.subset()
   
   ## Extract timestamps
-  xData <- as.POSIXct(paste(data$Date, data$Time), format = "%d/%m/%Y %H:%M:%S")
+  timestamps <- setup.timestamps(data)
   
   ## Open png file
   png(filename = "plot3.png", width = 480, height = 480)
   
   ## Draw graph
-  plot3.graph(xData,  data)
+  plot3.graph(timestamps,  data)
   
   ## Close file
   dev.off()

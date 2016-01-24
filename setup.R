@@ -27,3 +27,8 @@ setup.subset <- function() {
   data <- subset(entireData, Date == '2/2/2007' | Date == '1/2/2007')
   data
 }
+
+## Extracts timestamps from the Date and Time columns combined
+setup.timestamps <- function(data) {
+  as.POSIXct(paste(data$Date, data$Time), format = "%d/%m/%Y %H:%M:%S")
+}

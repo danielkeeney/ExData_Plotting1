@@ -4,7 +4,7 @@ plot4 <- function() {
   data <- setup.subset()
   
   ## Extract timestamps
-  timestamps <- as.POSIXct(paste(data$Date, data$Time), format = "%d/%m/%Y %H:%M:%S")
+  timestamps <- setup.timestamps(data)
   
   ## Open png file
   png(filename = "plot4.png", width = 480, height = 480)
